@@ -7,4 +7,8 @@ describe("GET /", function () {
     //navigate to root and check the response is "hello world"
     request(app).get("/").expect("hello world", done);
   });
+
+  setTimeout(() => {
+    process.exit(1);
+  }, 1000);
 });

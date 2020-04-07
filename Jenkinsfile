@@ -16,9 +16,9 @@ pipeline {
       }
     }
 
-    stage('Build') {
+    stage('Deploy') {
       steps {
-       sh './script/build'
+       sh './script/deploy'
       }
     }
   }
