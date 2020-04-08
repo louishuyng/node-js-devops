@@ -4,9 +4,15 @@ pipeline {
   tools {nodejs "node"}
 
   stages {
-    stage('Install Packages') {
+    stage('Install Core Packages') {
       steps {
         sh 'npm install'
+      }
+    }
+
+    stage('Install PM2') {
+      steps {
+        sh 'npm install -g pm2@latest'
       }
     }
 
