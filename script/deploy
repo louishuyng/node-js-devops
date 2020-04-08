@@ -1,11 +1,11 @@
-#!/bin/sh
-branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+#!/bin/bash
+git_branch_local=$(echo $GIT_BRANCH | sed -e "s|origin/||g")
 
 ssh -i '~/node-app.pem' ubuntu@13.250.37.223 <<EOF
  cd ~/node_js_ci-cd/
- git checkout ${branch}
+ git checkout ${git_branch_local}
  git pull
  pm2 delete all
  pm2 start ecosystem.config.js
- pm2 restart server_${branch}
+ pm2 restart server_${git_branch_local}
 EOF
