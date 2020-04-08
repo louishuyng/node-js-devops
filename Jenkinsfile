@@ -1,3 +1,5 @@
+@Library('jenkins-shared-library')_
+
 pipeline {
   agent any
 
@@ -20,6 +22,13 @@ pipeline {
       steps {
        sh './script/deploy'
       }
+    }
+  }
+
+  post {
+    always {
+      slackNotifier(currentBuild.currentResult)
+      cleanWs()
     }
   }
 }
