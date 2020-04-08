@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 const server = App.getInstance().server;
 
 server.get("/", (_, res) => {
-  res.send(PORT);
+  res.send(`test_at_port: ${PORT}`);
 });
 
 server.listen(PORT, () => {
