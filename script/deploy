@@ -3,7 +3,7 @@ branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 
 ssh -i '~/node-app.pem' ubuntu@13.250.37.223 <<EOF
  cd ~/node_js_ci-cd/
- git co $branch
+ git checkout $branch
  git pull
- git restart server_$branch
+ pm2 start server.js --name 'server_${branch}'
 EOF
