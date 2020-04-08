@@ -4,14 +4,14 @@ module.exports = {
       name: "server_master",
       script: "./server.js",
       env: {
-        PORT: 3000,
+        PORT: "4000",
       },
     },
     {
       name: "server_develop",
       script: "./server.js",
       env: {
-        PORT: 5000,
+        PORT: "5000",
       },
     },
   ],
