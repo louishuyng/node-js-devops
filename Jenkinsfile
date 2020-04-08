@@ -10,12 +10,6 @@ pipeline {
       }
     }
 
-    stage('Install PM2') {
-      steps {
-        sh 'npm install -g pm2@latest'
-      }
-    }
-
     stage('Test') {
       steps {
         sh './script/test'

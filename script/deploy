@@ -2,7 +2,5 @@
 ssh -i '~/node-app.pem' ubuntu@13.250.37.223 <<EOF
  cd ~/node_js_ci-cd/
  git pull
- pm2 delete server
- pm2 start server.js
- exit
+ pm2 restart all
 EOF
