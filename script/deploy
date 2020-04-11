@@ -1,7 +1,7 @@
 #!/bin/bash
 git_branch_local=$(echo $GIT_BRANCH | sed -e "s|origin/||g")
 
-ssh -i '~/node-app.pem' ubuntu@13.250.37.223 <<EOF
+ssh -i '~/node-app.pem' ubuntu@52.221.196.71 <<EOF
  cd ~/node_js_ci-cd/
  git checkout ${git_branch_local}
  git pull

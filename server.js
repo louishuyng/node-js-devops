@@ -5,6 +5,8 @@ const PORT = process.env.PORT || 3000;
 
 const server = App.getInstance().server;
 
+console.log("ak hihi just for testing");
+
 server.get("/", (_, res) => {
   res.send(`test_at_port: ${PORT}`);
 });
